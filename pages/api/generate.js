@@ -33,9 +33,8 @@ export default async function (req, res) {
       temperature: 0.6, // 0.6, 0.9
       max_tokens: 1500,
       top_p: 1.0,
-      frequency_penalty: 1.0,
-      presence_penalty: 1.0,
-      stream: false
+      frequency_penalty: 0,
+      presence_penalty: 0
     });
     res.status(200).json({ result: completion.data.choices[0].text });
   } catch (error) {
@@ -57,5 +56,5 @@ export default async function (req, res) {
 function generatePrompt(arg) {
   const capitalized =
     arg[0].toUpperCase() + arg.slice(1).toLowerCase();
-  return `${capitalized}. Format the result properly`;
+  return `${capitalized}. Format the result properly with html tags if needed.`;
 }
