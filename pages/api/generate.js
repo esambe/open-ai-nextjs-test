@@ -57,5 +57,5 @@ export default async function (req, res) {
 function generatePrompt(arg) {
   const capitalized =
     arg[0].toUpperCase() + arg.slice(1).toLowerCase();
-  return `${capitalized}. Wrap result in necessary html tags appropriate.`;
+  return `${capitalized}. Format the result properly`;
 }
