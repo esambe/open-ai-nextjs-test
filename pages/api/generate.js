@@ -35,7 +35,6 @@ export default async function (req, res) {
       top_p: 1.0,
       frequency_penalty: 1.0,
       presence_penalty: 1.0,
-      stop: [" Human:", " AI:"],
       stream: false
     });
     res.status(200).json({ result: completion.data.choices[0].text });
